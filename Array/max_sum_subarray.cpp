@@ -8,6 +8,7 @@ int findMaxSumSubarray(int *arr, int n)   // Kadane's Algorithm
 	int currSum = 0;                      // max sum ending at 'i'
 	int maxSum = 0;
 	
+	//TODO: include edge case for all negative integers array
 	for(int i=0; i<n; i++)
 	{
 		currSum += arr[i];
