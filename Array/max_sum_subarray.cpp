@@ -8,7 +8,6 @@ int findMaxSumSubarray(int *arr, int n)   // Kadane's Algorithm
 	int currSum = 0;                      // max sum ending at 'i'
 	int maxSum = 0;
 	
-	//TODO: include edge case for all negative integers array
 	for(int i=0; i<n; i++)
 	{
 		currSum += arr[i];
@@ -18,6 +17,15 @@ int findMaxSumSubarray(int *arr, int n)   // Kadane's Algorithm
 		
 		maxSum = max(maxSum, currSum);
 	}
+	
+// 	// Code which also works for the edge case of all negative integer arrays:
+// 	int prevSum = arr[0];
+// 	int maxSum = arr[0];
+// 	for(int i=0; i<n; i++)
+// 	{
+// 		prevSum = max(arr[i], prevSum+arr[i]);
+// 		maxSum = max(maxSum, prevSum);
+// 	}
 	
 	return maxSum;
 }
@@ -29,11 +37,3 @@ int main()
 
     cout << findMaxSumSubarray(arr, 6) << endl; 
 }
-
-
-
-
-
-
-
-
